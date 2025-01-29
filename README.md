@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# USD Exchange Rates Tracker 📈
+![GitHub](https://img.shields.io/github/license/aleksanderpalamar/usd-exchange-rates-tracker)
+![GitHub last commit](https://img.shields.io/github/last-commit/aleksanderpalamar/usd-exchange-rates-tracker)
+![GitHub top language](https://img.shields.io/github/languages/top/aleksanderpalamar/usd-exchange-rates-tracker)
 
-## Getting Started
+## 📝 Descrição
+Uma aplicação web moderna para acompanhar taxas de câmbio do Dólar Americano (USD) em relação a outras moedas. A aplicação oferece visualização em tempo real e histórico de taxas de câmbio através de gráficos interativos.
 
-First, run the development server:
+## 🚀 Funcionalidades
+Visualização em Tempo Real
+- Cards mostrando taxas de câmbio atuais do USD para moedas selecionadas.
+- Atualização dinâmica dos valores.
+- Filtros Personalizáveis.
+Seleção de moedas para acompanhamento (BRL, EUR, GBP, JPY, CNY)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**Períodos de visualização:**
+```
+Últimos 7 dias
+Últimos 30 dias
+Último ano
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Gráfico Histórico
+Visualização de dados históricos em gráfico de linha
+Suporte para múltiplas moedas simultaneamente
+### Legendas interativas
+Cores únicas para cada moeda
+Exportação de Dados
+Download dos dados históricos em formato CSV
+### 🛠️ Tecnologias Utilizadas
+- Next.js - Framework React para produção
+- TypeScript - Tipagem estática
+- Tailwind CSS - Framework CSS utilitário
+- Chart.js - Biblioteca de gráficos
+- React Chart.js 2 - Wrapper React para Chart.js
+- React Icons - Biblioteca de ícones
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 📦 Estrutura do Projeto
+```bash
+usd-exchange-rates-tracker
+├── components
+│   ├── CurrencyCards.tsx
+│   ├── Filters.tsx
+│   ├── HistoricalChart.tsx
+├── app
+│   ├── page.tsx
+│   ├── layouts.tsx
+```
+### 💻 Como Executar
+Clone o repositório:
+```bash
+git clone https://github.com/aleksanderpalamar/usd-exchange-rates-tracker.git
+```
+Instale as dependências:
+```bash
+npm install
+```
+Execute o servidor de desenvolvimento:
+```bash
+npm run dev
+```
+Acesse http://localhost:3000 no seu navegador
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🔧 Configuração
+- Requisitos
+- Node.js 16.8.0 ou superior `npm ou yarn`.
 
-## Learn More
+## 📱 Responsividade
+**A aplicação é totalmente responsiva:**
 
-To learn more about Next.js, take a look at the following resources:
+Layout fluido para diferentes tamanhos de tela
+Grid adaptativo para currency cards
+Gráfico responsivo
+🎨 Personalização
+Temas e Cores
+O projeto utiliza Tailwind CSS para estilização. As cores principais são:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```css
+Background: bg-gray-100
+Cards: bg-white
+Botões: bg-blue-500
+Texto: text-gray-800, text-zinc-900
+```
+**Moedas Suportadas**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Para adicionar novas moedas, edite o array currencyOptions em Filters.tsx
 
-## Deploy on Vercel
+## 📊 Componentes Principais
+- CurrencyCards
+Exibe cards com taxas de câmbio em tempo real
+Props:
+data: Objeto com taxas atuais
+currencies: Array de moedas selecionadas
+- Filters
+Controles para seleção de período e moedas
+Props:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- selectedPeriod: Período atual selecionado
+- selectedCurrencies: Moedas selecionadas
+- setSelectedPeriod: Função para atualizar período
+- setSelectedCurrencies: Função para atualizar moedas
+- HistoricalChart: Gráfico de linha com dados históricos
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Props:
+data: Objeto com dados históricos
+currencies: Array de moedas para exibição
+## 📄 Licença
+
+[LICENSE - MIT](https://github.com/aleksanderpalamar/usd-exchange-rates-tracker/blob/main/LICENSE)
+
+## 👥 Contribuição
+- Faça o fork do projeto
+- Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
+- Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
+- Push para a branch (`git push origin feature/nova-feature`)
+- Abra um Pull Request (`git pull-request -m 'Adiciona nova feature'`)
+- Para reportar bugs ou solicitar features, abra uma issue no repositório.
+
+Desenvolvido com ❤️ [Aleksander Palamar](https://aleksanderpalamar.dev/)
