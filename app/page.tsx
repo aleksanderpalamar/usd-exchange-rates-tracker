@@ -60,19 +60,27 @@ export default function Home() {
   }, [fetchHistoricalData])
 
   const handleDownloadCSV = () => {
-    const csvContent = Object.entries(historicalData)
-      .map(([date, rates]) => {
-        const row = [date, ...Object.entries(rates).map(([rate]) => rate)]
-        return row.join(',')
-      })
-      .join('\n')
+    const sortedDates = Object.keys(historicalData).sort()
 
-    const blob = new Blob([`Date,${selectedCurrencies.join(',')}\n${csvContent}`], { type: 'text/csv' })
-    const url = window.URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = `historical_rates_${format(new Date(), 'yyyy-MM-dd')}.csv`
-    a.click()
+    const header = ['Date', ...selectedCurrencies].join(',')
+
+    const rows = sortedDates.map((date) => {
+      const rates = historicalData[date]
+      const values = selectedCurrencies.map((currency) => rates[currency] ? rates[currency].toFixed(4) : [currency, '-'].join(','))
+      return [date, ...values].join(',')
+    });
+
+    const csvContent = [header, ...rows].join('\n')
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;'})
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = `exchange_rates_${format(new Date(), 'yyyyMMdd_HHmmss')}.csv`
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    URL.revokeObjectURL(url)
   }
 
   return (
