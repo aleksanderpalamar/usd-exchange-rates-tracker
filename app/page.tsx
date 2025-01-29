@@ -7,6 +7,7 @@ import Filters from '@/components/Filters'
 import CurrencyCards from '@/components/CurrencyCards'
 import HistoricalChart from '@/components/HistoricalChart'
 import { BiLoader } from 'react-icons/bi'
+//import ShareButton from '@/components/ShareButton'
 
 type CurrencyData = {
   [key: string]: number
@@ -104,7 +105,7 @@ export default function Home() {
               <button onClick={handleDownloadCSV} className='bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600'>
                 Download CSV
               </button>
-              {/*<ShareButton /> */}
+              {/*<ShareButton />*/}
             </div>
           </div>
           {Object.keys(historicalData).length > 0 ? (
