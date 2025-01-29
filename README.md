@@ -3,6 +3,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/aleksanderpalamar/usd-exchange-rates-tracker)
 ![GitHub top language](https://img.shields.io/github/languages/top/aleksanderpalamar/usd-exchange-rates-tracker)
 
+
 ## 📝 Descrição
 Uma aplicação web moderna para acompanhar taxas de câmbio do Dólar Americano (USD) em relação a outras moedas. A aplicação oferece visualização em tempo real e histórico de taxas de câmbio através de gráficos interativos.
 
