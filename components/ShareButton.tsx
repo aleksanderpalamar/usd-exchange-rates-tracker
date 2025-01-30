@@ -67,14 +67,25 @@ export default function ShareButton() {
   } 
 
   return (
-    <div className="flex items-center gap-2">
-      <button 
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 z-50">
+      <button
         onClick={handleShare}
         disabled={isCapturing}
-        className="flex items-center bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 disabled:opacity-50">
-        <ShareIcon className="h-5 w-5 mr-2" />
-        {isCapturing ? 'Capturando...' : 'Compartilhar'}
-      </button>      
+        className="flex items-center justify-center gap-2 
+          px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3
+          text-sm sm:text-base md:text-lg
+          font-medium text-white 
+          bg-blue-600 hover:bg-blue-700
+          rounded-full sm:rounded-lg md:rounded-xl
+          shadow-lg hover:shadow-xl
+          transition-all duration-200
+          disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        <ShareIcon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
+        <span className="hidden sm:inline">
+          {isCapturing ? 'Capturando...' : 'Compartilhar'}
+        </span>
+      </button>
     </div>
   )
 }

@@ -102,7 +102,8 @@ export default function Home() {
           <div className='flex items-center justify-between mb-4'>
             <h2 className='text-xl font-bold text-gray-800'>Historical Rates</h2>
             <div className='flex gap-2'>
-              <button onClick={handleDownloadCSV} className='bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600'>
+              <button 
+                onClick={handleDownloadCSV} className='bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600'>
                 Download CSV
               </button>
               <ShareButton />
