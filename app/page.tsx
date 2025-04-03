@@ -7,7 +7,7 @@ import Filters from '@/components/Filters'
 import CurrencyCards from '@/components/CurrencyCards'
 import HistoricalChart from '@/components/HistoricalChart'
 import { BiLoader } from 'react-icons/bi'
-import ShareButton from '@/components/ShareButton'
+import CurrencyConverter from "@/components/Currency-converter";
 
 type CurrencyData = {
   [key: string]: number
@@ -90,6 +90,7 @@ export default function Home() {
         <h1 className='text-3xl font-bold text-gray-800 mb-8'>
           USD Exchange Rates Tracker 📈
         </h1>
+        <CurrencyConverter />
         <Filters
           selectedPeriod={selectedPeriod}
           selectedCurrencies={selectedCurrencies}
@@ -106,7 +107,6 @@ export default function Home() {
                 onClick={handleDownloadCSV} className='bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600'>
                 Download CSV
               </button>
-              <ShareButton />
             </div>
           </div>
           {Object.keys(historicalData).length > 0 ? (
