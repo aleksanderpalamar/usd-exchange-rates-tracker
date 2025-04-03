@@ -90,13 +90,15 @@ export default function Home() {
         <h1 className='text-3xl font-bold text-gray-800 mb-8'>
           USD Exchange Rates Tracker 📈
         </h1>
-        <CurrencyConverter />
-        <Filters
-          selectedPeriod={selectedPeriod}
-          selectedCurrencies={selectedCurrencies}
-          setSelectedPeriod={setSelectedPeriod}
-          setSelectedCurrencies={setSelectedCurrencies}
-        />
+        <div className="flex flex-col md:flex-row gap-4">
+          <CurrencyConverter />
+          <Filters
+              selectedPeriod={selectedPeriod}
+              selectedCurrencies={selectedCurrencies}
+              setSelectedPeriod={setSelectedPeriod}
+              setSelectedCurrencies={setSelectedCurrencies}
+          />
+        </div>
         <CurrencyCards data={realTimeData} currencies={selectedCurrencies} />
 
         <div className='bg-white p-6 rounded-lg shadow-md mb-6'>

@@ -21,8 +21,8 @@ export default function Filters({
   }
 
   return (
-    <div className='bg-white p-6 rounded-lg shadow-md mb-6'>
-      <div className='flex flex-wrap -mx-2 gap-6'>
+    <div className='bg-white p-6 rounded-lg w-fit h-fit md:w-fit md:h-32 shadow-md mb-6'>
+      <div className='flex flex-col md:flex-row -mx-2 gap-6'>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">Period</label>
           <select
